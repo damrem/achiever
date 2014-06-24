@@ -1,17 +1,19 @@
-'use strict';
+(function () {
+    'use strict';
+    
 
-/**
- * @ngdoc function
- * @name achieverApp.controller:AboutCtrl
- * @description
- * # AboutCtrl
- * Controller of the achieverApp
- */
-angular.module('achieverApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    /**
+     * @ngdoc function
+     * @name app.controller:AboutController
+     * @description
+     * # AboutController
+     * Controller of the app
+     */
+    
+    angular.module('app')
+
+        .controller('AboutController', ['$scope', '$interval', function ($scope, $interval) {
+            $scope.title = "About";
+        }]);
+    
+}());

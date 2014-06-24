@@ -1,33 +1,47 @@
-'use strict';
+(function () {
+    
+    'use strict';
+    
+    /**
+     * @ngdoc overview
+     * @name achieverApp
+     * @description
+     * # achieverApp
+     *
+     * Main module of the application.
+     */
+    
+    try {
+        angular
 
-/**
- * @ngdoc overview
- * @name achieverApp
- * @description
- * # achieverApp
- *
- * Main module of the application.
- */
-angular
-  .module('achieverApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+            .module('app', [
+                'ngAnimate',
+                'ngCookies',
+                'ngResource',
+                'ngRoute',
+                'ngSanitize',
+                'ngTouch'
+            ])
+
+            .config(function ($routeProvider) {
+                $routeProvider
+                    .when('/', {
+                        templateUrl: 'views/main.html',
+                        controller: 'TimeController'
+                    })
+                    .when('/about', {
+                        templateUrl: 'views/about.html',
+                        controller: 'AboutController'
+                    })
+                    .when('/subviews', {
+                        templateUrl: 'subviews'
+                    })
+                    .otherwise({
+                        redirectTo: '/'
+                    });
+            });
+    } catch (error) {
+        alert(error);
+    }
+    
+}());
