@@ -30,8 +30,7 @@
                         controller: 'TimeController'
                     })
                     .when('/about', {
-                        templateUrl: 'views/about.html',
-                        controller: 'AboutController'
+                        templateUrl: 'views/about.html'
                     })
                     .when('/subviews', {
                         templateUrl: 'subviews'
