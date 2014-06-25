@@ -1,0 +1,30 @@
+$bar-border-radius: 2px;
+
+.bar {
+    border: solid 1px #dddddd;
+    width: 256px;
+    height: 16px;
+    background: #eeeeee;
+    
+    border-radius: $bar-border-radius;
+    -moz-border-radius: $bar-border-radius;
+    -webkit-border-radius: $bar-border-radius;
+    
+}
+
+.bar-fill {
+    background-color: #0080ff;
+    height: 100%;
+    
+    border-radius: $bar-border-radius;
+    -moz-border-radius: $bar-border-radius;
+    -webkit-border-radius: $bar-border-radius;
+    /*
+    border-top-left-radius: $bar-border-radius;
+    -moz-border-top-left-radius: $bar-border-radius;
+    -webkit-border-top-left-radius: $bar-border-radius;
+    border-bottom-left-radius: $bar-border-radius;
+    -moz-border-bottom-left-radius: $bar-border-radius;
+    -webkit-border-bottom-left-radius: $bar-border-radius;
+    */
+}
