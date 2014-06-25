@@ -1,5 +1,6 @@
 <div ng-controller="TimeController">
-    <div>{{elapsed}}</div>
+    <div>Elapsed Time Ever: {{elapsed | ddhhmmss}}</div>
+    <div>Current Level: {{level}}</div>
     <div ng-include src="'views/subviews/bar.html'"></div>
     <pre ng-show="true">{{debug}}</pre>
 </div>

@@ -18,20 +18,19 @@
             
             $scope.debug = "";
             
+            //  no cookie yet, we set one up
             if ($cookies.time_elapsed === undefined) {
                 $cookies.time_elapsed = 0;
             }
-            if ($cookies.time_level === undefined) {
-                $cookies.time_level = 0;
-            }
             
+            //  we retrieve the elapsed time from the cookie
             $scope.elapsed = parseInt($cookies.time_elapsed, 10);
             
-            var level = fibonacci.toIndex($scope.elapsed);
-            $scope.debug += "level= " + level;
+            //  we calculate the level reached for the time
+            $scope.level = fibonacci.toIndex($scope.elapsed);
             
             $scope.current = $scope.elapsed;
-            $scope.total = fibonacci.fromIndex($scope.level);
+            $scope.total = fibonacci.fromIndex($scope.level + 1);
             
             $interval(function () {
                 
@@ -43,8 +42,8 @@
                 if ($scope.elapsed > fibonacci.fromIndex($scope.level)) {
                     $scope.current -= fibonacci.fromIndex($scope.level);
                     
-                    $scope.level += 1;
-                    $scope.total = fibonacci.fromIndex($scope.level);
+                    $scope.level = fibonacci.toIndex($scope.elapsed);
+                    $scope.total = fibonacci.fromIndex($scope.level + 1);
                 }
                 
                 

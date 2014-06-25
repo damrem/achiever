@@ -26,8 +26,8 @@
             .config(function ($routeProvider) {
                 $routeProvider
                     .when('/', {
-                        templateUrl: 'views/main.html',
-                        controller: 'TimeController'
+                        templateUrl: 'views/main.html'/*,
+                        controller: 'TimeController'*/
                     })
                     .when('/about', {
                         templateUrl: 'views/about.html'
