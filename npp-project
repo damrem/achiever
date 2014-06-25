@@ -1,1 +1,32 @@
-<NotepadPlus />
+<NotepadPlus>
+    <Project name="achiever-app">
+        <Folder name="images">
+            <File name="app\images\yeoman.png" />
+        </Folder>
+        <Folder name="scripts">
+            <Folder name="controllers">
+                <File name="app\scripts\controllers\main.js" />
+            </Folder>
+            <File name="app\scripts\app.js" />
+        </Folder>
+        <Folder name="styles">
+            <File name="app\styles\main.scss" />
+        </Folder>
+        <Folder name="views">
+            <Folder name="subviews">
+                <File name="app\views\subviews\bar.html" />
+                <File name="app\views\subviews\timer.html" />
+            </Folder>
+            <File name="app\views\about.html" />
+            <File name="app\views\footer.html" />
+            <File name="app\views\header.html" />
+            <File name="app\views\main.html" />
+        </Folder>
+        <File name="app\.buildignore" />
+        <File name="app\.htaccess" />
+        <File name="app\404.html" />
+        <File name="app\favicon.ico" />
+        <File name="app\index.html" />
+        <File name="app\robots.txt" />
+    </Project>
+</NotepadPlus>

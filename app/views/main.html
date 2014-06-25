@@ -1,1 +1,5 @@
-<div ng-controller="TimeController" ng-include src="'views/subviews/timer.html'"></div>
+<div ng-controller="TimeController">
+    <div>{{elapsed}}</div>
+    <div ng-include src="'views/subviews/bar.html'"></div>
+    <pre ng-show="true">{{debug}}</pre>
+</div>
