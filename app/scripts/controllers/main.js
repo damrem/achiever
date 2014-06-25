@@ -63,7 +63,31 @@ angular.module('app')
                     }
                 }
 
-
+                function updateChart() {
+                    $scope.chart = {
+                        type: 'PieChart',
+                        options: {
+                            displayed: true,
+                            displayExactValues: false,
+                            legend: 'none'
+                        },
+                        data: [
+                            [
+                                "label",
+                                "value"
+                            ],
+                            [
+                                "current",
+                                $scope.current
+                            ],
+                            [
+                                "remaining",
+                                $scope.total - $scope.current
+                            ]
+                        ],
+                        cssStyle: "height: 50px; width: 50px"
+                    };
+                }
 
 
                 setup();
@@ -72,6 +96,7 @@ angular.module('app')
 
                     updateTime();
                     updateLevel();
+                    updateChart();
 
                 }, 1000);
 

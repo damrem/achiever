@@ -1,0 +1,11 @@
+.bar-container {
+    border: solid 1px #dddddd;
+    background-color: #EEEEEE;
+    height: 10px;
+    width: 100%;
+}
+
+.bar-fill {
+    background-color: #ff0000;
+    height: 100%;
+}
