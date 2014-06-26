@@ -6,7 +6,7 @@ angular.module('app')
 
         function fromIndex(n) {
             if (n <= 3) {
-                return n;
+                return Math.max(0, n);
             }
 
             var u = 2, v = 3, w, i;

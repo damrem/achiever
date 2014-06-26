@@ -32,7 +32,8 @@ angular.module('app')
                 }
 
                 function updateTotal() {
-                    $scope.total = timeLevelConverter.getTimeFromLevel(getNextLevel());
+                    $scope.totalTimeInLevel = 
+                        timeLevelConverter.getTimeFromLevel(getNextLevel()) - timeLevelConverter.getTimeFromLevel(getCurrentLevel());
                 }
 
                 function setup() {
@@ -45,16 +46,17 @@ angular.module('app')
                     $scope.elapsed = parseInt($cookies.time_elapsed, 10);
                     updateLevel();
                     updateTotal();
-                    $scope.current = $scope.elapsed - timeLevelConverter.getTimeFromLevel(getCurrentLevel());
+                    $scope.currentTimeInLevel = $scope.elapsed - timeLevelConverter.getTimeFromLevel(getCurrentLevel());
                 }
 
                 function updateTime() {
                     $scope.elapsed += 1;
                     $cookies.time_elapsed = $scope.elapsed;
-                    $scope.current += 1;
+                    $scope.currentTimeInLevel += 1;
 
-                    if ($scope.current >= $scope.total) {
-                        $scope.current = 0;
+                    if ($scope.currentTimeInLevel > $scope.totalTimeInLevel) {
+                        $scope.currentTimeInLevel = 1;
+                        updateLevel();
                         updateTotal();
                     }
                 }
@@ -64,7 +66,6 @@ angular.module('app')
                 $interval(function () {
 
                     updateTime();
-                    updateLevel();
 
                 }, 1000);
 
