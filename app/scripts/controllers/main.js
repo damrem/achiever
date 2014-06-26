@@ -14,21 +14,17 @@
 angular.module('app')
 
     .controller('TimeController',
-            ['$scope', '$interval', '$cookies', 'fibonacci',
-            function ($scope, $interval, $cookies, fibonacci) {
+            ['$scope', '$interval', '$cookies', 'fibonacci', 'timeLevelConverter',
+            function ($scope, $interval, $cookies, fibonacci, timeLevelConverter) {
 
                 $scope.debug = "";
 
                 function getCurrentLevel() {
-                    return Math.floor(fibonacci.toIndex($scope.elapsed / 10));
+                    return timeLevelConverter.getLevelFromTime($scope.elapsed);
                 }
 
                 function getNextLevel() {
                     return getCurrentLevel() + 1;
-                }
-
-                function getLevelTime(level) {
-                    return fibonacci.fromIndex(level) * 10;
                 }
 
                 function updateLevel() {
@@ -36,7 +32,7 @@ angular.module('app')
                 }
 
                 function updateTotal() {
-                    $scope.total = getLevelTime(getNextLevel());
+                    $scope.total = timeLevelConverter.getTimeFromLevel(getNextLevel());
                 }
 
                 function setup() {
@@ -49,7 +45,7 @@ angular.module('app')
                     $scope.elapsed = parseInt($cookies.time_elapsed, 10);
                     updateLevel();
                     updateTotal();
-                    $scope.current = $scope.elapsed - getLevelTime(getCurrentLevel());
+                    $scope.current = $scope.elapsed - timeLevelConverter.getTimeFromLevel(getCurrentLevel());
                 }
 
                 function updateTime() {
@@ -63,40 +59,12 @@ angular.module('app')
                     }
                 }
 
-                function updateChart() {
-                    $scope.chart = {
-                        type: 'PieChart',
-                        options: {
-                            displayed: true,
-                            displayExactValues: false,
-                            legend: 'none'
-                        },
-                        data: [
-                            [
-                                "label",
-                                "value"
-                            ],
-                            [
-                                "current",
-                                $scope.current
-                            ],
-                            [
-                                "remaining",
-                                $scope.total - $scope.current
-                            ]
-                        ],
-                        cssStyle: "height: 50px; width: 50px"
-                    };
-                }
-
-
                 setup();
 
                 $interval(function () {
 
                     updateTime();
                     updateLevel();
-                    updateChart();
 
                 }, 1000);
 
