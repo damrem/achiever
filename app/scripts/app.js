@@ -29,9 +29,6 @@ angular
             .when('/about', {
                 templateUrl: 'views/about.html'
             })
-            .when('/subviews', {
-                templateUrl: 'subviews'
-            })
             .otherwise({
                 redirectTo: '/'
             });

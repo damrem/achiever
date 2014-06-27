@@ -14,6 +14,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  height: 2046px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -96,111 +97,116 @@ body {
     clear: left;
 }
 
+.container {
+  //background: yellow;
 
-.controller {
-    
-    $border-radius: 4px;
-    
-    $title-height: 48px;
-    $info-height: 24px;
-    $bar-height: 24px;
-    
-    $title-color: white;
-    $title-bg-color: black;
-	
-	$info-side-padding: 4px;
-    
-    $level-color: white;
-    $level-bg-color: black;
-    
-    $total-color: white;
-    $total-bg-color: black;
-    
-    $bar-txt-color: black;
-    $bar-fill-color: #0080ff;
-    $bar-bg-color: white;
-    
-    
-    //border: 1px solid black;
-	@mixin border-radius($radius) {
-		-webkit-border-radius: $radius;
-		-moz-border-radius: $radius;
-		-ms-border-radius: $radius;
-		border-radius: $radius;
-	} 
-    
-    .content {
-        padding: 8px;
-        background-color: gray;
-		@include border-radius($border-radius);
-    
-        h2 {
-			//height: $title-height;
-			text-align: center;
-            margin: 0px;
-            padding: 0px;
-            color: $title-color;
-            background: $title-bg-color;
-        }
-    
-        .info {
-			font-weight: bold;
-			margin: 0px;
-            padding: 0px;
-			//padding-top: 2px;
-			float: left;
-			//height: $info-height;
-			width: 50%;
-		}
-        
-        .level {
-			@extend .info;
-			color: $level-color;
-            background-color: $level-bg-color;
-			padding-left: $info-side-padding;
-        }
+  .controller {
+      
+      $border-radius: 4px;
+      
+      $title-height: 48px;
+      $info-height: 24px;
+      $bar-height: 24px;
+      
+      $title-color: white;
+      $title-bg-color: black;
+  	
+  	$info-side-padding: 4px;
+      
+      $level-color: white;
+      $level-bg-color: black;
+      
+      $total-color: white;
+      $total-bg-color: black;
+      
+      $bar-txt-color: black;
+      $bar-fill-color: #0080ff;
+      $bar-bg-color: white;
+      
+      
+      //border: 1px solid black;
+  	@mixin border-radius($radius) {
+  		-webkit-border-radius: $radius;
+  		-moz-border-radius: $radius;
+  		-ms-border-radius: $radius;
+  		border-radius: $radius;
+  	} 
+      
+      .content {
+          padding: 8px;
+          background-color: gray;
+  		@include border-radius($border-radius);
+      
+          h2 {
+  			//height: $title-height;
+  			text-align: center;
+              margin: 0px;
+              padding: 0px;
+              color: $title-color;
+              background: $title-bg-color;
+          }
+      
+          .info {
+  			font-weight: bold;
+  			margin: 0px;
+              padding: 0px;
+  			//padding-top: 2px;
+  			float: left;
+  			//height: $info-height;
+  			width: 50%;
+  		}
+          
+          .level {
+  			@extend .info;
+  			color: $level-color;
+              background-color: $level-bg-color;
+  			padding-left: $info-side-padding;
+          }
 
-        .total {
-			@extend .info;
-            color: $total-color;
-            background: $total-bg-color;
-            text-align: right;
-			padding-right: $info-side-padding;
-        }
+          .total {
+  			@extend .info;
+              color: $total-color;
+              background: $total-bg-color;
+              text-align: right;
+  			padding-right: $info-side-padding;
+          }
 
-        .bar {
+          .bar {
 
-            $bar-border-radius: 2px;
-            
-			width: 100%;
-            height: $bar-height;
-			background-color: $bar-bg-color;
-			float: left;
+              $bar-border-radius: 2px;
+              
+  			width: 100%;
+              height: $bar-height;
+  			background-color: $bar-bg-color;
+  			float: left;
 
-            .bar-background {
-                //border: solid 1px #dddddd;
-                width: 100%;
-                height: $bar-height;
-                background-color: $bar-bg-color;
-            }
+              .bar-background {
+                  //border: solid 1px #dddddd;
+                  width: 100%;
+                  height: $bar-height;
+                  background-color: $bar-bg-color;
+              }
 
-            .bar-fill {
-                background-color: $bar-fill-color;
-                height: 100%;
-            }
+              .bar-fill {
+                  background-color: $bar-fill-color;
+                  height: 100%;
+              }
 
-            .bar-text {
-                color: $bar-txt-color;
-                position: relative;
-                top: -20px;
-                font-weight: bold;
-                text-align: right;
-                padding-right: 4px;
-            }
-        }
+              .bar-text {
+                  color: $bar-txt-color;
+                  position: relative;
+                  top: -20px;
+                  font-weight: bold;
+                  text-align: right;
+                  padding-right: 4px;
+              }
+          }
 
-        
-    }
+          
+      }
+  }
+
+  .debug {
+    background: yellow;
+  }
 }
-
-

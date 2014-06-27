@@ -14,13 +14,15 @@
 angular.module('app')
 
     .controller('TimeController',
-            ['$scope', '$interval', '$cookies', 'fibonacci', 'timeLevelConverter',
-            function ($scope, $interval, $cookies, fibonacci, timeLevelConverter) {
+            ['$scope', '$interval', '$cookies', 'fibonacci', 'levelConverter',
+            function ($scope, $interval, $cookies, fibonacci, levelConverter) {
 
                 $scope.debug = '';
 
+                var factor = 10;
+
                 function getCurrentLevel() {
-                    return timeLevelConverter.getLevelFromTime($scope.elapsed);
+                    return levelConverter.getLevelFromValue($scope.total, factor);
                 }
 
                 function getNextLevel() {
@@ -32,8 +34,8 @@ angular.module('app')
                 }
 
                 function updateTotal() {
-                    $scope.totalTimeInLevel = 
-                        timeLevelConverter.getTimeFromLevel(getNextLevel()) - timeLevelConverter.getTimeFromLevel(getCurrentLevel());
+                    $scope.totalInLevel = 
+                        levelConverter.getValueFromLevel(getNextLevel(), factor) - levelConverter.getValueFromLevel(getCurrentLevel(), factor);
                 }
 
                 function setup() {
@@ -42,20 +44,20 @@ angular.module('app')
                         $cookies.timeElapsed = 0;
                     }
 
-                    //  we retrieve the elapsed time from the cookie
-                    $scope.elapsed = parseInt($cookies.timeElapsed, 10);
+                    //  we retrieve the total time from the cookie
+                    $scope.total = parseInt($cookies.timeElapsed, 10);
                     updateLevel();
                     updateTotal();
-                    $scope.currentTimeInLevel = $scope.elapsed - timeLevelConverter.getTimeFromLevel(getCurrentLevel());
+                    $scope.currentInLevel = $scope.total - levelConverter.getValueFromLevel(getCurrentLevel(), factor);
                 }
 
                 function updateTime() {
-                    $scope.elapsed += 1;
-                    $cookies.timeElapsed = $scope.elapsed;
-                    $scope.currentTimeInLevel += 1;
+                    $scope.total += 1;
+                    $cookies.timeElapsed = $scope.total;
+                    $scope.currentInLevel += 1;
 
-                    if ($scope.currentTimeInLevel > $scope.totalTimeInLevel) {
-                        $scope.currentTimeInLevel = 1;
+                    if ($scope.currentInLevel > $scope.totalInLevel) {
+                        $scope.currentInLevel = 1;
                         updateLevel();
                         updateTotal();
                     }
