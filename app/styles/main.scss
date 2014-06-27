@@ -99,122 +99,108 @@ body {
 
 .controller {
     
-    $internal-margin: 8px;
+    $border-radius: 4px;
+    
+    $title-height: 48px;
+    $info-height: 24px;
+    $bar-height: 24px;
+    
+    $title-color: white;
+    $title-bg-color: black;
+	
+	$info-side-padding: 4px;
+    
+    $level-color: white;
+    $level-bg-color: black;
+    
+    $total-color: white;
+    $total-bg-color: black;
+    
+    $bar-txt-color: black;
+    $bar-fill-color: #0080ff;
+    $bar-bg-color: white;
     
     
-    //margin: 8px;
-    //margin: 15px;
-    //padding: 15px;
     //border: 1px solid black;
+	@mixin border-radius($radius) {
+		-webkit-border-radius: $radius;
+		-moz-border-radius: $radius;
+		-ms-border-radius: $radius;
+		border-radius: $radius;
+	} 
     
     .content {
-        //margin: 8px;
         padding: 8px;
-        background-color: #aaaaaa;
+        background-color: gray;
+		@include border-radius($border-radius);
     
-    
-        .level {
-
-            $level-border-radius: 8px;
-
-            border-radius: $level-border-radius;
-            -moz-border-radius: $level-border-radius;
-            -webkit-border-radius: $level-border-radius;
-
+        h2 {
+			//height: $title-height;
+			text-align: center;
             margin: 0px;
             padding: 0px;
-            padding-top: 8px;
-            margin-right: $internal-margin;
-            background-color: black;
-            width: 64px;
-            //height: 64px;
-            text-align: center;
-            color: white;
-            float: left;
-
-            .level-label {
-                font-size: 8px;
-                margin: 0px;
-                padding: 0px;
-                margin-bottom: -4px;
-                //background: green;
-            }
-            .level-number {
-                //background: red;
-                font-size: 32px;
-                margin: 0px;
-                padding: 0px;
-            }
+            color: $title-color;
+            background: $title-bg-color;
+        }
+    
+        .info {
+			font-weight: bold;
+			margin: 0px;
+            padding: 0px;
+			//padding-top: 2px;
+			float: left;
+			//height: $info-height;
+			width: 50%;
+		}
+        
+        .level {
+			@extend .info;
+			color: $level-color;
+            background-color: $level-bg-color;
+			padding-left: $info-side-padding;
         }
 
-
+        .total {
+			@extend .info;
+            color: $total-color;
+            background: $total-bg-color;
+            text-align: right;
+			padding-right: $info-side-padding;
+        }
 
         .bar {
 
             $bar-border-radius: 2px;
-            $bar-height: 16px;
-
-            float: left;
-            //background: red;
+            
+			width: 100%;
             height: $bar-height;
+			background-color: $bar-bg-color;
+			float: left;
 
             .bar-background {
-                border: solid 1px #dddddd;
-                //width: 100%;
+                //border: solid 1px #dddddd;
+                width: 100%;
                 height: $bar-height;
-                background: #eeeeee;
-
-                border-radius: $bar-border-radius;
-                -moz-border-radius: $bar-border-radius;
-                -webkit-border-radius: $bar-border-radius;
-
+                background-color: $bar-bg-color;
             }
 
             .bar-fill {
-                background-color: #0080ff;
+                background-color: $bar-fill-color;
                 height: 100%;
-
-                border-radius: $bar-border-radius;
-                -moz-border-radius: $bar-border-radius;
-                -webkit-border-radius: $bar-border-radius;
-                /*
-                border-top-left-radius: $bar-border-radius;
-                -moz-border-top-left-radius: $bar-border-radius;
-                -webkit-border-top-left-radius: $bar-border-radius;
-                border-bottom-left-radius: $bar-border-radius;
-                -moz-border-bottom-left-radius: $bar-border-radius;
-                -webkit-border-bottom-left-radius: $bar-border-radius;
-                */
             }
 
             .bar-text {
+                color: $bar-txt-color;
                 position: relative;
-                top: -16px;
+                top: -20px;
                 font-weight: bold;
-                font-size: 10px;
                 text-align: right;
                 padding-right: 4px;
-                //background: green;
             }
         }
 
-        h2 {
-            margin: 0px;
-            margin-bottom: $internal-margin;
-            background: yellow;
-            float: left;
-        }
+        
     }
 }
 
-#time-container {
-    #time-total {
-        position: relative;
-        //top: -42px;
-        //background: green;
-        width: 100%;
-        font-size: 8px;
-        color: gray;
-        text-align: right;
-    }
-}
+
