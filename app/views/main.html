@@ -1,6 +1,27 @@
-<div ng-controller="TimeController">
-    <div>Elapsed Time Ever: {{elapsed}}</div>
-    <div>Current Level: {{level}}</div>
-    <div ng-include src="'views/bar.html'"></div>
-    <pre ng-show="true">{{debug}}</pre>
+<div class="row">
+
+    <div id="time-container" class="controller col-md-4" ng-controller="TimeController">
+        <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
+        <h2>Time</h2>
+        <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
+        <div class="bar-container col-md-4" id="time-bar" ng-include src="'views/bar.html'"></div>
+        <pre ng-show="false">{{debug}}</pre>
+    </div>
+    
+    <div id="time-container" class="controller col-md-4" ng-controller="TimeController">
+        <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
+        <h2>Time</h2>
+        <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
+        <div class="bar-container col-md-4" id="time-bar" ng-include src="'views/bar.html'"></div>
+        <pre ng-show="false">{{debug}}</pre>
+    </div>
+    
+    <div id="time-container" class="controller col-md-4" ng-controller="TimeController">
+        <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
+        <h2>Time</h2>
+        <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
+        <div class="bar-container col-md-4" id="time-bar" ng-include src="'views/bar.html'"></div>
+        <pre ng-show="false">{{debug}}</pre>
+    </div>
+    
 </div>
