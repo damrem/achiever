@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 describe('time-level-converter', function () {
     
@@ -11,7 +11,7 @@ describe('time-level-converter', function () {
     }));
     
 
-    it("should retrieve the time to wait for to reach a level.", function () {
+    it('should retrieve the time to wait for to reach a level.', function () {
         
         expect(timeLevelConverter.getTimeFromLevel(0)).toBe(0);
         expect(timeLevelConverter.getTimeFromLevel(1)).toBe(0);
@@ -27,7 +27,7 @@ describe('time-level-converter', function () {
         
     });
     
-    it("should retrieve the level reached after waiting a specified amount of time.", function () {
+    it('should retrieve the level reached after waiting a specified amount of time.', function () {
         
         expect(timeLevelConverter.getLevelFromTime(0)).toBe(1);
         expect(timeLevelConverter.getLevelFromTime(1)).toBe(1);

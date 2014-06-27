@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 describe('fibonacci', function() {
     
@@ -11,7 +11,7 @@ describe('fibonacci', function() {
     }));
     
 
-    it("should retrieve the right value from the Fibonacci sequence for a given index.", function() {
+    it('should retrieve the right value from the Fibonacci sequence for a given index.', function() {
         expect(fibonacci.fromIndex(0)).toBe(0);
         expect(fibonacci.fromIndex(1)).toBe(1);
         expect(fibonacci.fromIndex(2)).toBe(1);
@@ -25,7 +25,7 @@ describe('fibonacci', function() {
         expect(fibonacci.fromIndex(10)).toBe(55);
     });
     
-    it("should retrieve the right index matching a given value in the Fibonacci sequence.", function() {
+    it('should retrieve the right index matching a given value in the Fibonacci sequence.', function() {
         expect(fibonacci.toIndex(0)).toBe(0);
         expect(fibonacci.toIndex(1)).toBe(1);
         expect(fibonacci.toIndex(2)).toBe(3);

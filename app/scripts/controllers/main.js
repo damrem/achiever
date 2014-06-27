@@ -17,7 +17,7 @@ angular.module('app')
             ['$scope', '$interval', '$cookies', 'fibonacci', 'timeLevelConverter',
             function ($scope, $interval, $cookies, fibonacci, timeLevelConverter) {
 
-                $scope.debug = "";
+                $scope.debug = '';
 
                 function getCurrentLevel() {
                     return timeLevelConverter.getLevelFromTime($scope.elapsed);
@@ -38,12 +38,12 @@ angular.module('app')
 
                 function setup() {
                     //  no cookie yet, we set one up
-                    if ($cookies.time_elapsed === undefined) {
-                        $cookies.time_elapsed = 0;
+                    if ($cookies.timeElapsed === undefined) {
+                        $cookies.timeElapsed = 0;
                     }
 
                     //  we retrieve the elapsed time from the cookie
-                    $scope.elapsed = parseInt($cookies.time_elapsed, 10);
+                    $scope.elapsed = parseInt($cookies.timeElapsed, 10);
                     updateLevel();
                     updateTotal();
                     $scope.currentTimeInLevel = $scope.elapsed - timeLevelConverter.getTimeFromLevel(getCurrentLevel());
@@ -51,7 +51,7 @@ angular.module('app')
 
                 function updateTime() {
                     $scope.elapsed += 1;
-                    $cookies.time_elapsed = $scope.elapsed;
+                    $cookies.timeElapsed = $scope.elapsed;
                     $scope.currentTimeInLevel += 1;
 
                     if ($scope.currentTimeInLevel > $scope.totalTimeInLevel) {

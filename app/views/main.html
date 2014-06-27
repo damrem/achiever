@@ -1,27 +1,78 @@
 <div class="row">
 
     <div id="time-container" class="controller col-md-4" ng-controller="TimeController">
-        <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
-        <h2>Time</h2>
-        <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
-        <div class="bar-container col-md-4" id="time-bar" ng-include src="'views/bar.html'"></div>
-        <pre ng-show="false">{{debug}}</pre>
+        
+        <div class="content">
+        
+            <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
+
+            <h2>Time</h2>
+
+            <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
+
+            <div class="bar col-md-4" id="time-bar">
+                <div class="bar-background">
+                    <div class="bar-fill" style="width: {{currentTimeInLevel / totalTimeInLevel * 100}}%"></div>
+                </div>
+                <p class="bar-text">{{currentTimeInLevel}}/{{totalTimeInLevel}}</p>
+            </div>
+
+            <pre ng-show="false">{{debug}}</pre>
+            
+            <div class="clear"></div>
+            
+        </div>
+        
     </div>
     
     <div id="time-container" class="controller col-md-4" ng-controller="TimeController">
-        <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
-        <h2>Time</h2>
-        <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
-        <div class="bar-container col-md-4" id="time-bar" ng-include src="'views/bar.html'"></div>
-        <pre ng-show="false">{{debug}}</pre>
+        
+        <div class="content">
+        
+            <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
+
+            <h2>Time</h2>
+
+            <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
+
+            <div class="bar col-md-4" id="time-bar">
+                <div class="bar-background">
+                    <div class="bar-fill" style="width: {{currentTimeInLevel / totalTimeInLevel * 100}}%"></div>
+                </div>
+                <p class="bar-text">{{currentTimeInLevel}}/{{totalTimeInLevel}}</p>
+            </div>
+
+            <pre ng-show="false">{{debug}}</pre>
+            
+            <div class="clear"></div>
+            
+        </div>
+        
     </div>
     
     <div id="time-container" class="controller col-md-4" ng-controller="TimeController">
-        <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
-        <h2>Time</h2>
-        <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
-        <div class="bar-container col-md-4" id="time-bar" ng-include src="'views/bar.html'"></div>
-        <pre ng-show="false">{{debug}}</pre>
+        
+        <div class="content">
+        
+            <div id="time-level" class="level"><p class="level-label">Lvl</p><p class="level-number">{{level}}</p></div>
+
+            <h2>Time</h2>
+
+            <div id="time-total">Total: {{elapsed | filter:ddhhmmss}}</div>
+
+            <div class="bar col-md-4" id="time-bar">
+                <div class="bar-background">
+                    <div class="bar-fill" style="width: {{currentTimeInLevel / totalTimeInLevel * 100}}%"></div>
+                </div>
+                <p class="bar-text">{{currentTimeInLevel}}/{{totalTimeInLevel}}</p>
+            </div>
+
+            <pre ng-show="false">{{debug}}</pre>
+            
+            <div class="clear"></div>
+            
+        </div>
+        
     </div>
     
 </div>

@@ -91,117 +91,130 @@ body {
   }
 }
 
+
+.clear {
+    clear: left;
+}
+
+
 .controller {
     
     $internal-margin: 8px;
     
-    $background-r: random(256);
-    $background-g: random(256);
-    $background-b: random(256);
-    background-color: rgb($background-r, $background-g, $background-b);
-    padding: 8px;
     
-    .level {
-        
-        $level-border-radius: 8px;
-        
-        border-radius: $level-border-radius;
-        -moz-border-radius: $level-border-radius;
-        -webkit-border-radius: $level-border-radius;
-        
-        margin: 0px;
-        padding: 0px;
-        padding-top: 8px;
-        margin-right: $internal-margin;
-        background-color: black;
-        width: 64px;
-        //height: 64px;
-        text-align: center;
-        color: white;
-        float: left;
+    //margin: 8px;
+    //margin: 15px;
+    //padding: 15px;
+    //border: 1px solid black;
+    
+    .content {
+        //margin: 8px;
+        padding: 8px;
+        background-color: #aaaaaa;
+    
+    
+        .level {
 
-        .level-label {
-            font-size: 8px;
+            $level-border-radius: 8px;
+
+            border-radius: $level-border-radius;
+            -moz-border-radius: $level-border-radius;
+            -webkit-border-radius: $level-border-radius;
+
             margin: 0px;
             padding: 0px;
-            margin-bottom: -4px;
-            //background: green;
+            padding-top: 8px;
+            margin-right: $internal-margin;
+            background-color: black;
+            width: 64px;
+            //height: 64px;
+            text-align: center;
+            color: white;
+            float: left;
+
+            .level-label {
+                font-size: 8px;
+                margin: 0px;
+                padding: 0px;
+                margin-bottom: -4px;
+                //background: green;
+            }
+            .level-number {
+                //background: red;
+                font-size: 32px;
+                margin: 0px;
+                padding: 0px;
+            }
         }
-        .level-number {
+
+
+
+        .bar {
+
+            $bar-border-radius: 2px;
+            $bar-height: 16px;
+
+            float: left;
             //background: red;
-            font-size: 32px;
-            margin: 0px;
-            padding: 0px;
-        }
-    }
-
-    
-
-    .bar-container {
-        
-        $bar-border-radius: 2px;
-        $bar-height: 16px;
-        
-        float: left;
-        //background: red;
-        height: $bar-height;
-
-        .bar-background {
-            border: solid 1px #dddddd;
-            //width: 100%;
             height: $bar-height;
-            background: #eeeeee;
 
-            border-radius: $bar-border-radius;
-            -moz-border-radius: $bar-border-radius;
-            -webkit-border-radius: $bar-border-radius;
+            .bar-background {
+                border: solid 1px #dddddd;
+                //width: 100%;
+                height: $bar-height;
+                background: #eeeeee;
 
+                border-radius: $bar-border-radius;
+                -moz-border-radius: $bar-border-radius;
+                -webkit-border-radius: $bar-border-radius;
+
+            }
+
+            .bar-fill {
+                background-color: #0080ff;
+                height: 100%;
+
+                border-radius: $bar-border-radius;
+                -moz-border-radius: $bar-border-radius;
+                -webkit-border-radius: $bar-border-radius;
+                /*
+                border-top-left-radius: $bar-border-radius;
+                -moz-border-top-left-radius: $bar-border-radius;
+                -webkit-border-top-left-radius: $bar-border-radius;
+                border-bottom-left-radius: $bar-border-radius;
+                -moz-border-bottom-left-radius: $bar-border-radius;
+                -webkit-border-bottom-left-radius: $bar-border-radius;
+                */
+            }
+
+            .bar-text {
+                position: relative;
+                top: -16px;
+                font-weight: bold;
+                font-size: 10px;
+                text-align: right;
+                padding-right: 4px;
+                //background: green;
+            }
         }
 
-        .bar-fill {
-            background-color: #0080ff;
-            height: 100%;
-
-            border-radius: $bar-border-radius;
-            -moz-border-radius: $bar-border-radius;
-            -webkit-border-radius: $bar-border-radius;
-            /*
-            border-top-left-radius: $bar-border-radius;
-            -moz-border-top-left-radius: $bar-border-radius;
-            -webkit-border-top-left-radius: $bar-border-radius;
-            border-bottom-left-radius: $bar-border-radius;
-            -moz-border-bottom-left-radius: $bar-border-radius;
-            -webkit-border-bottom-left-radius: $bar-border-radius;
-            */
+        h2 {
+            margin: 0px;
+            margin-bottom: $internal-margin;
+            background: yellow;
+            float: left;
         }
-
-        .bar-text {
-            position: relative;
-            top: -16px;
-            font-weight: bold;
-            font-size: 10px;
-            text-align: right;
-            padding-right: 4px;
-            //background: green;
-        }
-    }
-
-    h2 {
-        margin: 0px;
-        margin-bottom: $internal-margin;
-        background: yellow;
-        float: left;
     }
 }
 
 #time-container {
-        #time-total {
-            position: relative;
-            //top: -42px;
-            //background: green;
-            width: 100%;
-            font-size: 8px;
-            color: gray;
-            text-align: right;
-        }
+    #time-total {
+        position: relative;
+        //top: -42px;
+        //background: green;
+        width: 100%;
+        font-size: 8px;
+        color: gray;
+        text-align: right;
     }
+}

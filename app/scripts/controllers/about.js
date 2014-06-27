@@ -11,7 +11,7 @@
 
 angular.module('app')
 
-    .controller('AboutController', ['$scope', '$interval', function ($scope, $interval) {
-        $scope.title = "About";
+    .controller('AboutController', ['$scope', '$interval', function ($scope) {
+        $scope.title = 'About';
     }]);
     
