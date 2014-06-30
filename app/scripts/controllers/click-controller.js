@@ -25,6 +25,6 @@ angular.module('app')
                     
                     $scope.debug += "click";
                     
-                    $scope.increment();
+                    $scope.increment(1);
                 });
             }]);

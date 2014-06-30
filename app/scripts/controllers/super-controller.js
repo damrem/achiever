@@ -17,8 +17,6 @@ angular.module('app')
             ['$scope', '$cookies', 'levelConverter', 'factor', 'propName',
             function ($scope, $cookies, levelConverter, factor, propName) {
 
-                //
-
                 $scope.debug = '';
 
                 var 
@@ -33,22 +31,27 @@ angular.module('app')
                     return getCurrentLevel() + 1;
                 }
 
-                $scope.updateLevel = function () {
+                var updateLevel = function () {
                     $scope.level = getCurrentLevel();
                 }
 
-                $scope.updateTotal = function () {
+                var updateTotal = function () {
                     $scope.totalInLevel = 
                         levelConverter.getValueFromLevel(getNextLevel(), factor) - levelConverter.getValueFromLevel(getCurrentLevel(), factor);
                 }
 
-                $scope.updateCookie = function () {
+                var update = function () {
+                    updateLevel();
+                    updateTotal();
+                }
+
+                var updateCookie = function () {
                     $cookies[propName] = $scope.total;
                 }
 
-                function setup() {
+                var setup = function () {
 
-                    $scope.debug = "";
+                    $scope.debug = '';
 
                     //  no cookie yet, we set one up
                     if ($cookies[propName] === undefined) {
@@ -57,27 +60,23 @@ angular.module('app')
 
                     //  we retrieve the total time from the cookie
                     $scope.total = parseInt($cookies[propName], 10);
-                    $scope.updateLevel();
-                    $scope.updateTotal();
+                    update();
                     $scope.currentInLevel = $scope.total - levelConverter.getValueFromLevel(getCurrentLevel(), factor);
                 }
 
-                $scope.increment = function () {
+                $scope.increment = function (value) {
 
-                    $scope.total += 1;
+                    $scope.total += value;
                     
-                    $scope.updateCookie();
+                    updateCookie();
                     
-                    $scope.currentInLevel += 1;
+                    $scope.currentInLevel += value;
                     
                     if ($scope.currentInLevel > $scope.totalInLevel) {
                         $scope.currentInLevel = 1;
-                        $scope.updateLevel();
-                        $scope.updateTotal();
+                        update();
                     }
                 }
-                
-                
 
                 setup();
             }]);

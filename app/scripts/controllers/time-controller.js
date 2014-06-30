@@ -23,7 +23,7 @@ angular.module('app')
 
                 $interval(function () {
 
-                    $scope.increment();
+                    $scope.increment(1);
 
                 }, 1000);
 
