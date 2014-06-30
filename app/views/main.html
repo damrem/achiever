@@ -22,7 +22,7 @@
         
     </div>
     
-    <div id="click-container" class="controller col-md-4" ng-controller="ClickController" ng-click="onClick()">
+    <div id="click-container" class="controller col-md-4" ng-controller="ClickController">
         
         <div class="content">
             
@@ -39,6 +39,28 @@
             </div>
 
             <pre ng-show="false">{{debug}}</pre>
+            <div class="clear"></div>
+        </div>
+        
+    </div>
+
+    <div id="scroll-container" class="controller col-md-4" ng-controller="ScrollController">
+        
+        <div class="content">
+            
+            <h2>Scroll Dist</h2>
+            
+            <div class="level">Level {{level}}</div>
+            <div class="total">Total: {{total}}</div>
+
+            <div class="bar">
+                <div class="bar-background">
+                    <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%"></div>
+                </div>
+                <p class="bar-text">{{currentInLevel}} / {{totalInLevel}}</p>
+            </div>
+
+            <pre ng-show="debug">{{debug}}</pre>
             <div class="clear"></div>
         </div>
         
