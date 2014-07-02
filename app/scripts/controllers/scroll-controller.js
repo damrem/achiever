@@ -18,8 +18,8 @@ angular.module('app')
             function ($scope, $window, $cookies, $controller, levelConverter, $log) {
 
                 $log.log('ScrollController');
-                
-                $scope.title = 'Scroll';
+
+                $scope.title = 'Scrollin\'';
                 $scope.unit = 'px';
                 $scope.factor = 500;
                 $scope.propName = 'scrollYDistance';

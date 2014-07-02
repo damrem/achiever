@@ -19,7 +19,7 @@ angular.module('app')
                 
                 $log.log('ScrollController');
                 
-                $scope.title = 'Click';
+                $scope.title = 'Clickin\'';
                 $scope.unit = 'clicks';
                 $scope.factor = 2;
                 $scope.propName = 'nbClicks';

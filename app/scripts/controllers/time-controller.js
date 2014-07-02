@@ -18,9 +18,9 @@ angular.module('app')
             function ($scope, $interval, $cookies, levelConverter, $controller, $log) {
 
                 $log.log('TimeController');
-                
-                $scope.title = 'Time';
-                $scope.unit = 's';
+
+                $scope.title = 'Timin\'';
+                $scope.unit = 'secs';
                 $scope.factor = 10;
                 $scope.propName = 'timeElapsed';
 

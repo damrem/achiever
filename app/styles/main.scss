@@ -1,7 +1,8 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 // bower:scss
+@import "compass";
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
-// endbower
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 
 .browsehappy {
   margin: 0.2em 0;
@@ -27,7 +28,8 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  //border-bottom: 1px solid #e5e5e5;
+  //margin-bottom: 20px;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -97,22 +99,26 @@ body {
     clear: left;
 }
 
-.container {
-  //background: yellow;
+.custom-container {
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+
+  h3 {
+    //font-size: 48px;
+    
+  }
+
+  
 
   .controller {
-      
-      $border-radius: 4px;
-      
-      $title-height: 48px;
-      $info-height: 24px;
-      $bar-height: 24px;
+
+      $border-radius: 5px;
+
+      $bar-height: 35px;
       
       $title-color: white;
       $title-bg-color: black;
   	
-  	$info-side-padding: 4px;
-      
       $level-color: white;
       $level-bg-color: black;
       
@@ -123,83 +129,107 @@ body {
       $bar-fill-color: #0080ff;
       $bar-bg-color: white;
       
+      margin-bottom: 15px;
       
-      //border: 1px solid black;
-  	@mixin border-radius($radius) {
-  		-webkit-border-radius: $radius;
-  		-moz-border-radius: $radius;
-  		-ms-border-radius: $radius;
-  		border-radius: $radius;
-  	} 
+    	@mixin border-radius($radius) {
+    		-webkit-border-radius: $radius;
+    		-moz-border-radius: $radius;
+    		-ms-border-radius: $radius;
+    		border-radius: $radius;
+    	} 
+
+      $bar-reflect-color: #80c0ff;
+      $bar-reflect-position: 95%;
+
+      @mixin gradient () {
+        // needs latest Compass, add '@import "compass"' to your scss
+        background-color: $bar-fill-color; // Old browsers
+        @include filter-gradient($bar-fill-color, white, vertical); // IE6-9
+        @include background-image(linear-gradient(top,  $bar-fill-color 0%, $bar-fill-color 95%, $bar-reflect-color 95%, $bar-reflect-color 100%));
+
+      }
       
       .content {
           padding: 8px;
           background-color: gray;
-  		@include border-radius($border-radius);
+  		    //@include border-radius($border-radius);
       
           h2 {
-  			//height: $title-height;
-  			text-align: center;
-              margin: 0px;
-              padding: 0px;
-              color: $title-color;
-              background: $title-bg-color;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            color: $title-color;
+            background: $title-bg-color;
           }
       
           .info {
-  			font-weight: bold;
-  			margin: 0px;
-              padding: 0px;
-  			//padding-top: 2px;
-  			float: left;
-  			//height: $info-height;
-  			width: 50%;
-  		}
+      			margin: 0px;
+            padding: 0px;
+      		}
           
           .level {
-  			@extend .info;
-  			color: $level-color;
-              background-color: $level-bg-color;
-  			padding-left: $info-side-padding;
+        		@extend .info;
+            text-align: center;
+            font-size: 24px;
+        		color: $level-color;
+            background-color: $level-bg-color;
+            //padding-top: 5px;
+            padding-bottom: 5px;
+            
           }
 
           .total {
-  			@extend .info;
-              color: $total-color;
-              background: $total-bg-color;
-              text-align: right;
-  			padding-right: $info-side-padding;
+            @extend .info;
+            color: $total-color;
+            background: $total-bg-color;
+            text-align: center;
+            //padding-top: 5px;
+            padding-bottom: 10px;
+
+            /*
+            .unit {
+              font-size: 12px;
+            }
+            */
           }
 
           .bar {
 
-              $bar-border-radius: 2px;
-              
-  			width: 100%;
-              height: $bar-height;
-  			background-color: $bar-bg-color;
-  			float: left;
+            $bar-border-radius: 2px;
 
-              .bar-background {
-                  //border: solid 1px #dddddd;
-                  width: 100%;
-                  height: $bar-height;
-                  background-color: $bar-bg-color;
-              }
+            width: 100%;
+            height: $bar-height;
+            background-color: $bar-bg-color;
+            float: left;
 
-              .bar-fill {
-                  background-color: $bar-fill-color;
-                  height: 100%;
-              }
+            .bar-background {
+                //border: solid 1px #dddddd;
+                width: 100%;
+                height: $bar-height;
+                background-color: $bar-bg-color;
+            }
 
-              .bar-text {
-                  color: $bar-txt-color;
-                  position: relative;
-                  top: -20px;
-                  font-weight: bold;
-                  text-align: right;
-                  padding-right: 4px;
-              }
+            .bar-fill {
+                //background-color: $bar-fill-color;
+                //@include gradient();
+                height: 100%;
+            }
+
+            .bar-text {
+                color: $bar-txt-color;
+                position: relative;
+                top: -25px;
+                text-align: center;
+                padding-right: 5px;
+
+                text-shadow:
+                -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff;  
+            }
           }
 
           
