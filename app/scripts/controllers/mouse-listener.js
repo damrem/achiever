@@ -15,10 +15,15 @@
 angular.module('app')
 
     .controller('MouseListener',
-            ['$scope', '$window',
-            function ($scope, $window) {
+            ['$scope', '$window', '$log',
+            function ($scope, $window, $log) {
 
                 $scope.onClick = function () {
                     $scope.$broadcast('clicked');
-                }
+                };
+
+                $scope.onMouseMove = function () {
+                	$log.log('onMouseMove');
+                	$scope.$broadcast('mouseMoved');
+                };
             }]);

@@ -16,10 +16,10 @@ angular.module('app')
     .controller('SuperController',
             ['$scope', '$cookies', 'levelConverter', '$log',
             function ($scope, $cookies, levelConverter, $log) {
-                $log.log('SuperController('+arguments.length);
-                $log.debug('factor='+$scope.factor);
+                //$log.log('SuperController('+arguments.length);
+                //$log.debug('factor='+$scope.factor);
 
-                $log.info('arguments = '+arguments);
+                //$log.info('arguments = '+arguments);
                 for(var i=0; i<arguments.length; i++) {
                     $log.debug(i+':'+arguments[i]);
                     /*
@@ -28,7 +28,7 @@ angular.module('app')
                     }
                     */
                 }
-                $log.debug(arguments[0][0]);
+                //$log.debug(arguments[0][0]);
                 //$log.log('SuperController,'+ title+','+factor+','+propName+','+unit);
 
                 /*
@@ -49,18 +49,18 @@ angular.module('app')
                 }
 
                 var updateLevel = function () {
-                    $log.log('SuperController.updateLevel(');
+                    //$log.log('SuperController.updateLevel(');
                     $scope.level = getCurrentLevel();
                 };
 
                 var updateTotal = function () {
-                    $log.log('SuperController.updateTotal(');
+                    //$log.log('SuperController.updateTotal(');
                     $scope.totalInLevel = 
                         levelConverter.getValueFromLevel(getNextLevel(), $scope.factor) - levelConverter.getValueFromLevel(getCurrentLevel(), $scope.factor);
                 };
 
                 var update = function () {
-                    $log.log('SuperController.update(');
+                    //$log.log('SuperController.update(');
                     updateLevel();
                     updateTotal();
                 };
@@ -72,7 +72,7 @@ angular.module('app')
                 };
 
                 var setup = function () {
-                    $log.log('SuperController.setup(');
+                    //$log.log('SuperController.setup(');
                     //  no cookie yet, we set one up
                     if ($cookies[$scope.propName] === undefined) {
                         $cookies[$scope.propName] = 0;
@@ -82,8 +82,8 @@ angular.module('app')
                     $scope.total = parseInt($cookies[$scope.propName], 10);
                     update();
                     $scope.currentInLevel = $scope.total - levelConverter.getValueFromLevel(getCurrentLevel(), $scope.factor);
-                    $log.debug(getCurrentLevel()+', ' + $scope.factor);
-                    $log.debug($scope.currentInLevel+' = '+$scope.total+' - '+levelConverter.getValueFromLevel(getCurrentLevel(), $scope.factor));
+                    //$log.debug(getCurrentLevel()+', ' + $scope.factor);
+                    //$log.debug($scope.currentInLevel+' = '+$scope.total+' - '+levelConverter.getValueFromLevel(getCurrentLevel(), $scope.factor));
                 };
 
                 $scope.increment = function (value) {
@@ -93,7 +93,7 @@ angular.module('app')
                     
                     updateCookie();
                     
-                    $log.debug('currentInLevel='+$scope.currentInLevel);
+                    //$log.debug('currentInLevel='+$scope.currentInLevel);
                     $scope.currentInLevel += value;
                     
                     if ($scope.currentInLevel > $scope.totalInLevel) {
