@@ -1,7 +1,21 @@
 <div class="row">
 
-    <div id="time-container" class="controller col-md-4" ng-controller="TimeController">
-        
+    <div class="controller col-md-4"  ng-controller="TimeController">
+        <ng-include src="'views/block.html'"></ng-include>
+    </div>
+
+    <div class="controller col-md-4"  ng-controller="ClickController">
+        <ng-include src="'views/block.html'"></ng-include>
+    </div>
+
+    <div class="controller col-md-4"  ng-controller="ScrollController">
+        <ng-include src="'views/block.html'"></ng-include>
+    </div>
+
+
+        <!--<achvr-block block-title='Time' block-unit='s' block-propname='timeElapsed' block-factor='10'></achvr-block>-->
+
+        <!--
         <div class="content">
             
             <h2>Time</h2>
@@ -19,9 +33,10 @@
             <pre ng-show="false">{{debug}}</pre>
             <div class="clear"></div>
         </div>
-        
-    </div>
+        -->
+   
     
+    <!--
     <div id="click-container" class="controller col-md-4" ng-controller="ClickController">
         
         <div class="content">
@@ -65,5 +80,5 @@
         </div>
         
     </div>
-    
+    -->
 </div>

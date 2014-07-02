@@ -1,0 +1,16 @@
+<div class="content">
+            
+    <h2>{{title}}</h2>
+    
+    <div class="level">Level {{level}}</div>
+    <div class="total">Total: {{total}}{{unit}}</div>
+
+    <div class="bar">
+        <div class="bar-background">
+            <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%"></div>
+        </div>
+        <p class="bar-text">{{currentInLevel}} / {{totalInLevel}}</p>
+    </div>
+
+    <div class="clear"></div>
+</div>

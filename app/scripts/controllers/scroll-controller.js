@@ -14,20 +14,24 @@
 angular.module('app')
 
     .controller('ScrollController',
-            ['$scope', '$window', '$cookies', '$controller', 'levelConverter',
-            function ($scope, $window, $cookies, $controller, levelConverter) {
+            ['$scope', '$window', '$cookies', '$controller', 'levelConverter', '$log',
+            function ($scope, $window, $cookies, $controller, levelConverter, $log) {
 
-                $scope.debug = '';
+                $log.log('ScrollController');
+                
+                $scope.title = 'Scroll';
+                $scope.unit = 'px';
+                $scope.factor = 500;
+                $scope.propName = 'scrollYDistance';
 
                 var lastScrollY = $window.scrollY;
 
                 $controller('SuperController', 
-                    {$scope: $scope, $cookies: $cookies, levelConverter: levelConverter, 
-                        factor: 500, propName: 'scrollYDistance'});
+                    {$scope: $scope, $cookies: $cookies, levelConverter: levelConverter});
                 
                 $window.onscroll = function () {
                     
                     $scope.increment(Math.abs($window.scrollY - lastScrollY));
-                    lastScrollY = scrollY;
+                    lastScrollY = $window.scrollY;
                 };
             }]);
