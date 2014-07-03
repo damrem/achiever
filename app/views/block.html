@@ -4,12 +4,12 @@
 
     <h2>{{title}}</h2>
     
-    <div class="level">Level {{level | number}}</div>
+    <div class="level {{levelClass}}">Level {{level | number}}</div>
     <div class="total">Total: {{total | number}} <span class='unit'>{{unit}}</span></div>
 
     <div class="bar">
         <div class="bar-background">
-            <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%" ng-animate="'bar-animate'"></div>
+            <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%"></div>
         </div>
         <p class="bar-text">{{currentInLevel | number}}/{{totalInLevel | number}}</p>
     </div>

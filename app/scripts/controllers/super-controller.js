@@ -16,29 +16,9 @@ angular.module('app')
     .controller('SuperController',
             ['$scope', '$cookies', '$timeout', 'levelConverter', '$log',
             function ($scope, $cookies, $timeout, levelConverter, $log) {
+
                 //$log.log('SuperController('+arguments.length);
-                //$log.debug('factor='+$scope.factor);
 
-                //$log.info('arguments = '+arguments);
-                for(var i=0; i<arguments.length; i++) {
-                    $log.debug(i+':'+arguments[i]);
-                    /*
-                    for(var subprop in arguments[prop]) {
-                        $log.debug(subprop+': '+arguments[prop][subprop]);
-                    }
-                    */
-                }
-                //$log.debug(arguments[0][0]);
-                //$log.log('SuperController,'+ title+','+factor+','+propName+','+unit);
-
-                /*
-                var 
-                    factor, 
-                    propName;
-                */ 
-
-                //$scope.title = title;
-               //$scope.unit = unit;
 
                 function getCurrentLevel() {
                     return levelConverter.getLevelFromValue($scope.total, $scope.factor);
@@ -73,6 +53,9 @@ angular.module('app')
 
                 var setup = function () {
                     //$log.log('SuperController.setup(');
+
+                    $scope.levelClass = 'level-up-leave';
+
                     //  no cookie yet, we set one up
                     if ($cookies[$scope.propName] === undefined) {
                         $cookies[$scope.propName] = 0;
@@ -95,9 +78,13 @@ angular.module('app')
                     
                     //  handles the end of level: when the bar is full, next level and back to 0
                     if ($scope.currentInLevel >= $scope.totalInLevel) {
+                        $scope.levelClass = 'level-up-enter';
+                        $log.info($scope.levelClass);
                         $timeout(function () {
                             $scope.currentInLevel = 0;
                             update();
+                            $scope.levelClass = 'level-up-leave';
+                            $log.info($scope.levelClass);
                         }, 100);
                     }
                 };  

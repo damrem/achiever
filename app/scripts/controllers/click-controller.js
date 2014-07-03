@@ -17,7 +17,7 @@ angular.module('app')
             ['$scope', '$cookies', 'levelConverter', '$controller', '$log',
             function ($scope, $cookies, levelConverter, $controller, $log) {
                 
-                $log.log('ScrollController');
+                $log.log('ClickController');
                 
                 $scope.title = 'Clickin\'';
                 $scope.unit = 'clicks';
