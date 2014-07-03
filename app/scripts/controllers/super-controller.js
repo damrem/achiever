@@ -14,8 +14,8 @@
 angular.module('app')
 
     .controller('SuperController',
-            ['$scope', '$cookies', 'levelConverter', '$log',
-            function ($scope, $cookies, levelConverter, $log) {
+            ['$scope', '$cookies', '$timeout', 'levelConverter', '$log',
+            function ($scope, $cookies, $timeout, levelConverter, $log) {
                 //$log.log('SuperController('+arguments.length);
                 //$log.debug('factor='+$scope.factor);
 
@@ -82,8 +82,6 @@ angular.module('app')
                     $scope.total = parseInt($cookies[$scope.propName], 10);
                     update();
                     $scope.currentInLevel = $scope.total - levelConverter.getValueFromLevel(getCurrentLevel(), $scope.factor);
-                    //$log.debug(getCurrentLevel()+', ' + $scope.factor);
-                    //$log.debug($scope.currentInLevel+' = '+$scope.total+' - '+levelConverter.getValueFromLevel(getCurrentLevel(), $scope.factor));
                 };
 
                 $scope.increment = function (value) {
@@ -93,12 +91,14 @@ angular.module('app')
                     
                     updateCookie();
                     
-                    //$log.debug('currentInLevel='+$scope.currentInLevel);
                     $scope.currentInLevel += value;
                     
-                    if ($scope.currentInLevel > $scope.totalInLevel) {
-                        $scope.currentInLevel = 1;
-                        update();
+                    //  handles the end of level: when the bar is full, next level and back to 0
+                    if ($scope.currentInLevel >= $scope.totalInLevel) {
+                        $timeout(function () {
+                            $scope.currentInLevel = 0;
+                            update();
+                        }, 100);
                     }
                 };  
 
