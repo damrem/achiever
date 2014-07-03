@@ -209,17 +209,22 @@ body {
             background-color: $bar-bg-color;
             float: left;
 
-            .bar-background {
-                //border: solid 1px #dddddd;
-                width: 100%;
-                height: $bar-height;
-                background-color: $bar-bg-color;
+           .bar-background {
+              //border: solid 1px #dddddd;
+              width: 100%;
+              height: $bar-height;
+              background-color: $bar-bg-color;
             }
 
             .bar-fill {
-                background-color: $bar-fill-color;
-                //@include gradient();
-                height: 100%;
+              background-color: $bar-fill-color;
+              height: 100%;
+
+              -webkit-transition: 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+              -moz-transition: 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+              -ms-transition: 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+              -o-transition: 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+              transition: 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
             }
 
             .bar-text {

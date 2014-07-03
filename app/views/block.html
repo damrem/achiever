@@ -9,7 +9,7 @@
 
     <div class="bar">
         <div class="bar-background">
-            <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%"></div>
+            <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%" ng-animate="'bar-animate'"></div>
         </div>
         <p class="bar-text">{{currentInLevel | number}}/{{totalInLevel | number}}</p>
     </div>
