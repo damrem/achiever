@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="app" ng-controller="MouseListener"  ng-click="onClick()" ng-mousemove="onMouseMove()"> 
+  <body ng-app="app" ng-controller="MouseListener" hm-release="onRelease($event)" hm-drag="onMove($event)" ng-mousemove="onMove()" hm-drag-end="onDragEnd($event)"> 
   <!--<button ng-mousemove="alert('move');">button</button>-->
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -67,6 +67,7 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-gestures/gestures.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

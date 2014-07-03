@@ -27,7 +27,7 @@ angular.module('app')
                 $controller('SuperController', 
                     {$scope: $scope, $cookies: $cookies, levelConverter: levelConverter});
                 
-                $scope.$on('clicked', function () {
+                $scope.$on('released', function () {
                     $scope.increment(1);
                 });
             }]);

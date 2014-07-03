@@ -27,7 +27,7 @@ angular.module('app')
                 $controller('SuperController', 
                     {$scope: $scope, $cookies: $cookies, levelConverter: levelConverter});
                 
-                $scope.$on('mouseMoved', function () {
+                $scope.$on('moved', function () {
                     $scope.increment(1);
                 });
             }]);
