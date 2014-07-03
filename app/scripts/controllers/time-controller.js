@@ -23,6 +23,7 @@ angular.module('app')
                 $scope.unit = 'secs';
                 $scope.factor = 10;
                 $scope.propName = 'timeElapsed';
+                $scope.icon = '/images/time.gif';
 
                 $controller('SuperController', 
                     {$scope: $scope, $cookies: $cookies, levelConverter: levelConverter});

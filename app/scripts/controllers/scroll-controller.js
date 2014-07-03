@@ -23,6 +23,7 @@ angular.module('app')
                 $scope.unit = 'px';
                 $scope.factor = 500;
                 $scope.propName = 'scrollYDistance';
+                $scope.icon = '/images/scroll.gif';
 
                 var lastScrollY = $window.scrollY;
 
