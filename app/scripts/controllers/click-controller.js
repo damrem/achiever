@@ -23,7 +23,7 @@ angular.module('app')
                 $scope.unit = 'clicks';
                 $scope.factor = 2;
                 $scope.propName = 'nbClicks';
-                $scope.icon = '/images/click.gif';
+                $scope.icon = 'images/click.gif';
 
                 $controller('SuperController', 
                     {$scope: $scope, $cookies: $cookies, levelConverter: levelConverter});
