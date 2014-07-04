@@ -19,7 +19,7 @@ angular.module('app')
                 
                 $log.log('ClickController');
                 
-                $scope.title = 'Clickin\'';
+                $scope.title = 'Click';
                 $scope.unit = 'clicks';
                 $scope.factor = 2;
                 $scope.propName = 'nbClicks';

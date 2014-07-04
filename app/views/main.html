@@ -1,88 +1,19 @@
 <div class="row">
 
-    <div class="controller col-md-4"  ng-controller="TimeController">
+    <div class="controller col-md-6"  ng-controller="TimeController">
         <ng-include src="'views/block.html'"></ng-include>
     </div>
 
-    <div class="controller col-md-4"  ng-controller="ClickController">
+    <div class="controller col-md-6"  ng-controller="ClickController">
         <ng-include src="'views/block.html'"></ng-include>
     </div>
 
-    <div class="controller col-md-4"  ng-controller="MouseMoveController">
+    <div class="controller col-md-6"  ng-controller="MouseMoveController">
         <ng-include src="'views/block.html'"></ng-include>
     </div>
 
-    <div class="controller col-md-4"  ng-controller="ScrollController">
+    <div class="controller col-md-6"  ng-controller="ScrollController">
         <ng-include src="'views/block.html'"></ng-include>
     </div>
 
-
-        <!--<achvr-block block-title='Time' block-unit='s' block-propname='timeElapsed' block-factor='10'></achvr-block>-->
-
-        <!--
-        <div class="content">
-            
-            <h2>Time</h2>
-            
-            <div class="level">Level {{level}}</div>
-            <div class="total">Total: {{total | filter:ddhhmmss}}</div>
-
-            <div class="bar">
-                <div class="bar-background">
-                    <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%"></div>
-                </div>
-                <p class="bar-text">{{currentInLevel}} / {{totalInLevel}}</p>
-            </div>
-
-            <pre ng-show="false">{{debug}}</pre>
-            <div class="clear"></div>
-        </div>
-        -->
-   
-    
-    <!--
-    <div id="click-container" class="controller col-md-4" ng-controller="ClickController">
-        
-        <div class="content">
-            
-            <h2>Clicks</h2>
-            
-            <div class="level">Level {{level}}</div>
-            <div class="total">Total: {{total}}</div>
-
-            <div class="bar">
-                <div class="bar-background">
-                    <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%"></div>
-                </div>
-                <p class="bar-text">{{currentInLevel}} / {{totalInLevel}}</p>
-            </div>
-
-            <pre ng-show="false">{{debug}}</pre>
-            <div class="clear"></div>
-        </div>
-        
-    </div>
-
-    <div id="scroll-container" class="controller col-md-4" ng-controller="ScrollController">
-        
-        <div class="content">
-            
-            <h2>Scroll Dist</h2>
-            
-            <div class="level">Level {{level}}</div>
-            <div class="total">Total: {{total}}</div>
-
-            <div class="bar">
-                <div class="bar-background">
-                    <div class="bar-fill" style="width: {{currentInLevel / totalInLevel * 100}}%"></div>
-                </div>
-                <p class="bar-text">{{currentInLevel}} / {{totalInLevel}}</p>
-            </div>
-
-            <pre ng-show="debug">{{debug}}</pre>
-            <div class="clear"></div>
-        </div>
-        
-    </div>
-    -->
 </div>

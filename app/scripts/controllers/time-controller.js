@@ -19,7 +19,7 @@ angular.module('app')
 
                 $log.log('TimeController');
 
-                $scope.title = 'Timin\'';
+                $scope.title = 'Time';
                 $scope.unit = 'secs';
                 $scope.factor = 10;
                 $scope.propName = 'timeElapsed';

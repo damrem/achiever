@@ -19,7 +19,7 @@ angular.module('app')
 
                 $log.log('ScrollController');
 
-                $scope.title = 'Scrollin\'';
+                $scope.title = 'Scroll';
                 $scope.unit = 'px';
                 $scope.factor = 500;
                 $scope.propName = 'scrollYDistance';

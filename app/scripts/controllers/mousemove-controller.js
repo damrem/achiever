@@ -19,7 +19,7 @@ angular.module('app')
                 
                 $log.log('MouseMoveController');
                 
-                $scope.title = 'Movin\'';
+                $scope.title = 'Move';
                 $scope.unit = 'px';
                 $scope.factor = 500;
                 $scope.propName = 'nbMoves';
