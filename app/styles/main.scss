@@ -26,10 +26,35 @@ body {
   padding-right: 15px;
 }
 
+$blue: #0080ff;
+$lightblue: #80c0ff;
+$darkblue: #004080;
+      
+$navbar-default-link-active-bg: $blue;
+
+a {
+  & {
+    color: $blue;
+  }
+  &:hover {
+    color: $lightblue;
+  }
+}
+
 /* Custom page header */
 .header {
   //border-bottom: 1px solid #e5e5e5;
   //margin-bottom: 20px;
+
+  li a {
+    color: $blue;
+  }
+  li.active a{
+    background: $blue;
+    &:hover {
+      background: $lightblue;
+    }
+  }
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -38,6 +63,8 @@ body {
     line-height: 40px;
     padding-bottom: 19px;
   }
+
+  
 }
 
 /* Custom page footer */
@@ -151,10 +178,6 @@ body {
       
       margin-top: 15px;
       margin-bottom: 15px;
-
-      $blue: #0080ff;
-      $lightblue: #80c0ff;
-      $darkblue: #004080;
 
       .content {
           padding: 8px;
