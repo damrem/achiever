@@ -134,6 +134,55 @@ a {
   transition: $duration cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
 }
 
+.relative {
+  position: relative;
+  //background-color: red;
+  //border: 1px green solid;
+}
+
+.slide {
+  background-color: yellow;
+  position: absolute;
+  //float:left;
+  //left: 0;
+  //top: 0;
+  //width: 100%;
+  height: 100%;
+  opacity: 1.0;
+}
+
+.slide.ng-enter,
+.slide.ng-leave {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.slide.ng-enter {
+    opacity: 0.0;
+    //position: absolute;
+    //top: -100%;
+    //left: 0px;
+}
+.slide.ng-enter-active {
+    opacity: 1.0;
+    //position: relative;
+    //top: 0%;
+    //left: 100%;
+}
+.slide.ng-leave {
+    opacity: 1.0;
+    //position: absolute;
+    //top: 0%;
+    //left: 100%;
+}
+.slide.ng-leave-active {
+    opacity: 0.0;
+    //position: relative;
+    //top: 100%;
+    //left: 0px;
+}
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -176,8 +225,8 @@ a {
       $bar-txt-color: black;
       $bar-bg-color: white;
       
-      margin-top: 15px;
-      margin-bottom: 15px;
+      margin-top: 0px;
+      margin-bottom: 30px;
 
       .content {
           padding: 8px;
