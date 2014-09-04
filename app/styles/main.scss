@@ -39,6 +39,13 @@ a {
   &:hover {
     color: $lightblue;
   }
+
+  img{
+      width:16px;
+      height:16px;
+      margin-top:-7px;
+      margin-right:5px;
+    }
 }
 
 /* Custom page header */
@@ -326,6 +333,19 @@ a {
 
   .about{
     margin-bottom:30px; 
+
+    ul{
+      list-style-type: none;
+      margin-left:-40px;
+      li{
+        /*hack, have to find a better solution*/
+        
+        float:left;
+        margin-right: 25px;
+      }
+    }
+
+    
   }
 
   .debug {
